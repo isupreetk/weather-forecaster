@@ -9,6 +9,22 @@ function App() {
   // console.log(`${api_URL}/current.json?key=${api_key}&q=Vancouver`);
 
   let [condition, setCondition] = useState();
+  let [darkMode, setDarkMode] = useState(false);
+  let [theme, setTheme] = useState("light");
+  let [icon, setIcon] = useState("🌙");
+
+  const toggleDarkMode = () => {
+      setDarkMode(!darkMode);
+      if (!darkMode) {
+        setTheme("dark");
+        setIcon("🔆");
+      }
+      else {
+        setTheme("light");
+        setIcon("🌙");
+      }
+      
+  };
 
   function getWeather(event) {
     event.preventDefault();
@@ -27,7 +43,10 @@ function App() {
 
   return (
 
-    <div className="App">
+    <div className={`App ${theme}`}>
+
+      <button onClick={toggleDarkMode} className='toggle-btn'>{icon}</button>
+
       <header className="App-header">
         <h1 className='App-header__title'>Check the current weather now!</h1>
       </header>

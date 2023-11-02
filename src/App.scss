@@ -5,8 +5,23 @@
   // background-size: contain;
   // width: 100%;
   height: 120vh;
+  // background-color: #282c34;
+  // color: white;
+}
+
+.dark {
   background-color: #282c34;
   color: white;
+}
+
+.light {
+  background-color: white;
+  color: #282c34;
+}
+
+.toggle-btn {
+  background-color: transparent;
+  border: 0px;
 }
 
 .App-header {
