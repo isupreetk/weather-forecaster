@@ -9,6 +9,14 @@
   // color: white;
 }
 
+.city{
+  
+  // background-position: center;
+  // background-size: cover;
+  height: 30vh;
+  width: auto;
+}
+
 .dark {
   background-color: #282c34;
   color: white;
@@ -57,14 +65,16 @@
   align-items: center; 
 
   &__input {
-    text-align: center;
-    margin-bottom: 1rem;
+    // text-align: center;
+    padding-left: 15px;
+    // margin-bottom: 1rem;
     height: 1.5rem;
-    width: 10rem;
+    width: 20rem;
+    border-radius: 20px;
   }
 
   &__button {
-    // margin: 1rem;
+    margin: 1rem;
     background-color: #61dafb;
     border-radius: 4px;
     height: 2rem;
