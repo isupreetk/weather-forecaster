@@ -4,8 +4,10 @@ import { useState, useRef } from 'react';
 
 function App() {
 
-  let api_key = "d1e9a59db3374dd3a00225001230111";
-  let api_URL = "https://api.weatherapi.com/v1";
+  let weather_api_key = "d1e9a59db3374dd3a00225001230111";
+  let weather_api_URL = "https://api.weatherapi.com/v1";
+  let unsplash_api_url = "https://api.unsplash.com";
+  let unsplash_client_id = "8FZ6HGQVeeTdXK7PzSe-oG5fvseGAqntYJxsQJvvmBk";
   // console.log(`${api_URL}/current.json?key=${api_key}&q=Vancouver`);
   let formRef = useRef();
 
@@ -15,12 +17,12 @@ function App() {
   function getWeather(event) {
     event.preventDefault();
 
-    axios.get(`${api_URL}/forecast.json?key=${api_key}&q=${event.target.city.value}&days=5`)
+    axios.get(`${weather_api_URL}/forecast.json?key=${weather_api_key}&q=${event.target.city.value}&days=5`)
       .then((response) => {
         setForecast(response.data);
       })
 
-    axios.get(`https://api.unsplash.com/search/photos/?client_id=8FZ6HGQVeeTdXK7PzSe-oG5fvseGAqntYJxsQJvvmBk&query=${event.target.city.value}`)
+    axios.get(`${unsplash_api_url}/search/photos/?client_id=${unsplash_client_id}&query=${event.target.city.value}`)
       .then((response) => {
         setCityImage(response.data.results[0].links?.download);
       })
