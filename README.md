@@ -2,10 +2,10 @@
 
 This app offers a quick and accurate way to check global weather conditions, helping you stay prepared for unexpected changes. Imagine the convenience of making your mornings hassle-free by effortlessly checking the weather forecast, giving you the time to plan your outfit and activities with confidence. You'll never be caught off guard by unpredictable weather patterns again; this app provides reliable information, making you feel like you have your own personal meteorologist guiding your choices.
 
-### Landing Page
+### Home
 ![home](https://github.com/isupreetk/weather-forecaster/blob/main/src/assets/screenshots/home.png?raw=true)
 
-### Correct Answer Prompt
+### Search Result
 ![search output](https://github.com/isupreetk/weather-forecaster/blob/main/src/assets/screenshots/search.png?raw=true)
 
 ### Installation and Setup Instructions
