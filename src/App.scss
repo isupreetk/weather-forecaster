@@ -10,9 +10,11 @@ body {
   justify-content: flex-start;
   align-items: center;
   height: 100%;
+  height: 900px;
   font-size: 1.2rem;
   line-height: 0rem;
   font-weight: 600;
+  background-color: #ecf0f1;
 
   &__header {
     display: flex;
@@ -21,7 +23,6 @@ body {
     width: 100%;
     height: 6rem;
     padding-left: 10rem;
-
   }
 
   &__inputs-container {
