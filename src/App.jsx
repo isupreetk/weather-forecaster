@@ -10,23 +10,7 @@ function App() {
   let formRef = useRef();
 
   let [forecast, setForecast] = useState();
-  // let [darkMode, setDarkMode] = useState(false);
-  // let [theme, setTheme] = useState("light");
-  // let [icon, setIcon] = useState("🌙");
   let [cityImage, setCityImage] = useState();
-
-  // const toggleDarkMode = () => {
-  //   setDarkMode(!darkMode);
-  //   if (!darkMode) {
-  //     setTheme("dark");
-  //     setIcon("🔆");
-  //   }
-  //   else {
-  //     setTheme("light");
-  //     setIcon("🌙");
-  //   }
-
-  // };
 
   function getWeather(event) {
     event.preventDefault();
@@ -62,9 +46,6 @@ function App() {
             <button className='form__button'>Check</button>
           </form>
         </div>
-        {/* <div>
-          <button onClick={toggleDarkMode} className='app__toggle-btn'>{icon}</button>
-        </div> */}
       </div>
 
       {forecast ?
@@ -73,7 +54,8 @@ function App() {
             <div className='output'>
               <div className='output__container1'>
                 <h2 className='output__city-title'>{forecast.location.name}</h2>
-                <p>{date.toLocaleDateString(undefined, options)} {date.toLocaleTimeString()}</p>
+                <p>{date.toLocaleDateString(undefined, options)}</p>
+                <p>{date.toLocaleTimeString()}</p>
                 <div className='output__city-details'>
                   <p className='output__city-temp'>{forecast.current?.temp_c}°C</p>
                   <p>{forecast.current?.condition.text}</p>
@@ -82,7 +64,7 @@ function App() {
               </div>
 
               <div className='output__container2'>
-                <img src={cityImage} className='city' alt="city" />
+                <img src={cityImage} className='output__city-image' alt="city" />
               </div>
 
               <div className='output__container3'>
@@ -93,11 +75,11 @@ function App() {
               </div>
             </div>
 
-            <div className='forecast-container'>
-              <div className='forecast'>
+            <div className='forecast'>
+              <div className='forecast__wrapper'>
                 {forecast.forecast.forecastday.map((day, index) => {
                   return (
-                    <div className='forecast__container1' key={index}>
+                    <div className='forecast__container' key={index}>
                       <p>{day.date}</p>
                       <img src={day.day.condition.icon} alt="prediction" />
 

@@ -1,5 +1,7 @@
 body {
   margin: 0rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .app {
@@ -39,24 +41,6 @@ body {
   }
 }
 
-.city {
-  height: 50vh;
-  width: 90%;
-  border-radius: 5px;
-}
-
-// .dark {
-//   background-color: #282c34;
-//   color: white;
-//   height: 100vh;
-// }
-
-// .light {
-//   background-color: white;
-//   color: #282c34;
-//   height: 100vh;
-// }
-
 .form {
   display: flex;
   justify-content: center;
@@ -88,15 +72,15 @@ body {
 
 .output {
   display: flex;
-  // flex-direction: column;
-  justify-content: center;
+  // justify-content: center;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
 
   &__container1 {
     display: flex;
     flex-direction: column;
-    width: 30%;
+    // width: 30%;
     padding-left: 5rem;
   }
 
@@ -104,10 +88,6 @@ body {
     font-size: 2rem;
     color: rgb(66, 131, 66);
   }
-
-  // &__city-details {
-  //   padding-left: 5rem;
-  // }
 
   &__city-temp {
     font-size: 3rem;
@@ -121,36 +101,43 @@ body {
 
   &__container2 {
     display: flex;
-    width: 50%;
+    // width: 40%;
     padding-left: 3rem;
+  }
+
+  &__city-image {
+    height: 50vh;
+    width: 100%;
+    border-radius: 5px;
   }
 
   &__container3 {
     display: flex;
     flex-direction: column;
-    width: 20%;
+    // width: 20%;
     padding-left: 2rem;
   }
 }
 
-.forecast-container {
+.forecast {
+
   text-align: center;
-  width: 90%;
+  // width: 90%;
   background-color: bisque;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 1rem;
   border-radius: 10px;
-}
 
-.forecast {
+  &__wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
+}
 
-  &__container1 {
+  &__container {
     border: 1px solid black;
     width: fit-content;
     padding: 0.5rem;
@@ -158,7 +145,7 @@ body {
     border-radius: 4px;
     display: flex;
     flex-direction: column;
-    width: 20%;
+    // width: 20%;
     color: #282c34;
   }
 
