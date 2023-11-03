@@ -5,7 +5,7 @@ import { useState, useRef } from 'react';
 function App() {
 
   let api_key = "d1e9a59db3374dd3a00225001230111";
-  let api_URL = "http://api.weatherapi.com/v1";
+  let api_URL = "https://api.weatherapi.com/v1";
   // console.log(`${api_URL}/current.json?key=${api_key}&q=Vancouver`);
   let formRef = useRef();
 
