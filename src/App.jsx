@@ -32,7 +32,7 @@ function App() {
 
   let date = new Date();
   const options = {
-    weekday: 'long',
+    // weekday: 'long',
     year: 'numeric',
     month: 'short',
     day: 'numeric',
@@ -56,11 +56,11 @@ function App() {
             <div className='output'>
               <div className='output__container1'>
                 <h2 className='output__city-title'>{forecast.location.name}</h2>
-                <p>{date.toLocaleDateString(undefined, options)}</p>
-                <p>{date.toLocaleTimeString()}</p>
+                <p className='output__date'>{date.toLocaleDateString(undefined, options)}</p>
+                <p className='output__time'>{date.toLocaleTimeString()}</p>
                 <div className='output__city-details'>
                   <p className='output__city-temp'>{forecast.current?.temp_c}°C</p>
-                  <p>{forecast.current?.condition.text}</p>
+                  <p className='output__condition-text'>{forecast.current?.condition.text}</p>
                   <img className='output__city-temp-icon' src={forecast.current?.condition.icon} alt="weather status" />
                 </div>
               </div>
@@ -70,10 +70,10 @@ function App() {
               </div>
 
               <div className='output__container3'>
-                <p>Feels Like: {forecast.current?.feelslike_c}°C</p>
-                <p>Humidity: {forecast.current?.humidity}%</p>
-                <p>Wind Speed: {forecast.current?.wind_kph} km/h</p>
-                <p>Precipitation: {forecast.current?.precip_in}%</p>
+                <p className='output__feels-like'>Feels Like: {forecast.current?.feelslike_c}°C</p>
+                <p className='output__humidity'>Humidity: {forecast.current?.humidity}%</p>
+                <p className='output__wind'>Wind: {forecast.current?.wind_kph} km/h</p>
+                <p className='output__precipitation'>Precipitation: {forecast.current?.precip_in}%</p>
               </div>
             </div>
 
@@ -82,12 +82,12 @@ function App() {
                 {forecast.forecast.forecastday.map((day, index) => {
                   return (
                     <div className='forecast__container' key={index}>
-                      <p>{day.date}</p>
-                      <img src={day.day.condition.icon} alt="prediction" />
+                      <p className='forecast__date'>{day.date}</p>
+                      <img src={day.day.condition.icon} alt="prediction" className='forecast__condition-icon'/>
 
                       <div className='forecast__max-min'>
-                        <p>{day.day.maxtemp_c}</p>
-                        <p>{day.day.mintemp_c}</p>
+                        <p className='forecast__maxtemp'>{day.day.maxtemp_c}°C</p>
+                        <p className='forecast__mintemp'>{day.day.mintemp_c}°C</p>
                       </div>
 
                     </div>

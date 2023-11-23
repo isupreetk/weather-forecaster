@@ -1,7 +1,15 @@
-body {
+@use "./partials/variables" as *;
+@use "./partials/mixins" as *;
+
+* {
   margin: 0rem;
+  padding: 0rem;
+}
+
+body {
   width: 100%;
   box-sizing: border-box;
+  background-color: #ecf0f1;
 }
 
 .app {
@@ -9,151 +17,382 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  height: 100%;
-  height: 900px;
-  font-size: 1.2rem;
-  line-height: 0rem;
-  font-weight: 600;
-  background-color: #ecf0f1;
+
+  @include tablet {  
+    height: 100%;
+    height: 900px;
+    font-size: 1.2rem;
+    line-height: 0rem;
+    font-weight: 600;
+  }
 
   &__header {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 6rem;
-    padding-left: 10rem;
+    height: 4rem;
+
+    @include tablet {
+      height: 6rem;
+      padding-left: 10rem;
+    }
   }
 
   &__inputs-container {
     width: 100%;
+    background-color: #282c34;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin: 1rem;
-    background-color: #282c34;
 
+    @include tablet {
+      margin: 1rem;
+    }
   }
 
   &__toggle-btn {
-    background-color: transparent;
-    border: 0px;
-    margin: 1.2rem;
+    @include tablet {
+      background-color: transparent;
+      border: 0px;
+      margin: 1.2rem;
+    }
   }
 }
 
 .form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  @include tablet {
+    
+  }
 
   &__input {
-    padding-left: 15px;
-    height: 1.5rem;
-    width: 25rem;
+    height: 2rem;
+    width: 10rem;
     border-radius: 20px;
+    padding-left: 10px;
+
+    @include tablet {
+      // height: 1.5rem;
+      height: 2.2rem;
+      width: 22rem;
+      padding-left: 15px;
+    }
   }
 
   &__button {
-    margin: 1rem;
-    background-color: bisque;
-    border-radius: 4px;
-    height: 2rem;
-    width: 6rem;
-    border: none;
+      
+      margin: 1rem;
+      background-color: bisque;
+      background-color: rgb(66, 131, 66);
+      color: #ffffff;
+      border-radius: 15px;
+      height: 2rem;
+      width: 5rem;
+      border: none;
+    @include tablet {
+      
+    }
   }
 }
 
 .output-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  @include tablet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @include desktop {
+    width: 95%;
+  }
 }
 
 .output {
   display: flex;
-  // justify-content: center;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+  flex-direction: column;
+
+  @include tablet {
+    flex-direction: row;
+    // justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  @include desktop {
+    margin-top: 5rem;
+  }
 
   &__container1 {
-    display: flex;
-    flex-direction: column;
-    // width: 30%;
+      margin-top: 1rem; 
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    
+      @include tablet {
+      margin-top: 0;
+      // width: 30%;
+      padding-left: 2rem;
+      width: 75%;
+      width: 65%;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    @include desktop {
+      // margin-top: 0;
     padding-left: 5rem;
+    // width: 75%;
+    width: 50%;
+    // align-items: flex-start;
+    // justify-content: center;
+    }
   }
 
   &__city-title {
-    font-size: 2rem;
+    
     color: rgb(66, 131, 66);
+    font-size: 2rem;
+    // margin: 0;
+    margin-top: 0.5rem;
+
+    @include tablet {
+      // font-size: 2rem;
+      margin-top: 2.5rem;
+    }
+  }
+
+  &__date {
+    margin-top: 0.5rem;
+
+    @include tablet {
+      // font-size: 2rem;
+      margin-top: 2.5rem;
+    }
+  }
+
+  &__time {
+    margin-bottom: 0.5rem;
+
+    @include tablet {
+      // font-size: 2rem;
+      margin-top: 2.5rem;
+    }
   }
 
   &__city-temp {
-    font-size: 3rem;
-    color: rgb(66, 131, 66);
+    
+      font-size: 3rem;
+      color: rgb(66, 131, 66);
+
+    @include tablet {
+      margin-top: 2.5rem;
+    }
+  }
+
+  &__condition-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+
+    @include tablet {
+      margin-top: 3rem;
+      justify-content: flex-start;
+    }
   }
 
   &__city-temp-icon {
-    height: 125px;
-    width: 125px;
+
+      height: 8rem;
+      width: 8rem;
+
+      @include tablet{
+        margin-top: 0.5rem;
+      }
   }
 
   &__container2 {
-    display: flex;
-    // width: 40%;
-    padding-left: 3rem;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+
+    @include tablet {
+      
+      // width: 40%;
+      // padding-left: 3rem;
+      width: 85%;
+    }
   }
 
   &__city-image {
-    height: 50vh;
-    width: 100%;
+    display: flex;
+    // height: 50vh;
+    // width: 70%;
+    height: 40vh;
+    width: 90%;
     border-radius: 5px;
+
+    @include tablet {
+      height: 35vh;
+      width: 90%;
+      // border-radius: 10px;
+    }
   }
 
   &__container3 {
-    display: flex;
-    flex-direction: column;
-    // width: 20%;
-    padding-left: 2rem;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 2rem 0rem;
+
+    @include tablet {
+      // width: 20%;
+      padding-left: 1rem;
+      width: 65%;
+      align-items: flex-start;
+      margin: 0rem;
+    }
+
+    @include desktop {
+      // padding-left: 1rem;
+    width: 50%;
+    // align-items: flex-start;
+    margin-left: 1rem;
+    }
+  }
+
+  &__feels-like {
+    @include tablet {
+      margin: 1rem;
+    }
+  }
+
+  &__humidity {
+    @include tablet {
+      margin: 1rem;
+    }
+  }
+
+  &__wind {
+    @include tablet {
+      margin: 1rem;
+      word-wrap: break-word;
+    }
+  }
+
+  &__precipitation {
+    @include tablet {
+      margin: 1rem;
+    }
   }
 }
 
 .forecast {
-
-  text-align: center;
-  // width: 90%;
   background-color: bisque;
+  background-color: rgb(66, 131, 66);
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 1rem;
   border-radius: 10px;
+  width: 100%;
+
+  @include tablet {
+    text-align: center;
+    width: 90%;
+    margin-top: 1rem;
+    height: 15rem;
+  }
+
+  @include desktop {
+    margin-top: 5rem;
+  }
 
   &__wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
+      
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      @include tablet {
+        flex-direction: row;
+        width: 100%;
+        // height: 12rem;
+      }
+  }
+
 
   &__container {
-    border: 1px solid black;
-    width: fit-content;
-    padding: 0.5rem;
-    margin: 2rem;
+    border: 1px solid #ffffff;;
     border-radius: 4px;
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    // width: 20%;
-    color: #282c34;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 1rem;
+    margin: 1rem;
+
+    @include tablet {
+      padding: 1rem;
+      margin: 1rem;
+      width: 20%;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #282c34;
+      height: 10rem;
+    }
+
+    @include desktop {
+      width: 12%;
+    }
+  }
+
+  &__date {
+    color: #ffffff;
+  }
+
+  &__condition-icon {
+    @include tablet {
+    margin-top: 0.5rem;
+  }
   }
 
   &__max-min {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 0.5rem;
+    }
+  }
+
+  &__maxtemp {
+    color: #ffffff;
+
+    @include tablet {
+      margin: 0.5rem;
+    }
+  }
+
+  &__mintemp {
+    color: #ffffff;
+
+    @include tablet {
+      margin: 0.5rem;
+    }
   }
 }
