@@ -60,8 +60,10 @@ function App() {
                 <p className='output__time'>{date.toLocaleTimeString()}</p>
                 <div className='output__city-details'>
                   <p className='output__city-temp'>{forecast.current?.temp_c}°C</p>
-                  <p className='output__condition-text'>{forecast.current?.condition.text}</p>
-                  <img className='output__city-temp-icon' src={forecast.current?.condition.icon} alt="weather status" />
+                  <div className='output__city-condition-details'>
+                    <img className='output__city-temp-icon' src={forecast.current?.condition.icon} alt="weather status" />
+                    <p className='output__condition-text'>{forecast.current?.condition.text}</p>
+                  </div>
                 </div>
               </div>
 
